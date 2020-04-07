@@ -1,0 +1,24 @@
+const app = require('express')()
+const consign = require('consign')
+const db = require('./config/db')
+const mongoose = require('mongoose')
+const PORT = process.env.PORT || 3000
+
+require('./config/mongodb')
+
+//Adicionando dentro de app o db, podendo usa-lo para fazer update, delete...
+app.db = db
+app.mongoose = mongoose
+
+consign()
+    .include('./config/passport.js')
+    .then('./config/middlewares.js')
+    .then('./api/validation.js')
+    .then('./api')
+    .then('./schedule')
+    .then('./config/routes.js')
+    .into(app)
+
+app.listen(PORT, () => {
+    console.log('Backend executando...')
+})
