@@ -6,4 +6,4 @@ mongoose.connect('mongodb://localhost/seraquepresta_stats', { useNewUrlParser: t
         console.log('\x1b[41m%s\x1b[37m', msg, '\x1b[0m')
     })
 
-//mongodb+srv://deploy:<password>@cluster0-rgc9n.mongodb.net/test?retryWrites=true&w=majority
+   // mongodb+srv://deploy:<password>@cluster0-rgc9n.mongodb.net/test?retryWrites=true&w=majority
